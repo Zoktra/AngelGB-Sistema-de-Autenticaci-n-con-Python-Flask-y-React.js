@@ -5,6 +5,8 @@ from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User
 from api.utils import generate_sitemap, APIException
 from flask_cors import CORS
+from flask_jwt_extended import create_access_token
+from flask_jwt_extended import jwt_required
 
 api = Blueprint('api', __name__)
 
@@ -20,3 +22,23 @@ def handle_hello():
     }
 
     return jsonify(response_body), 200
+
+@api.route('/login', methods=['POST'])
+def handle_login():
+    data = request.json
+    email = data.get('email')
+    password = data.get('password')
+    if not email or not password:
+        return jsonify({"msg" : "El email y el password son requeridos"}), 400
+    
+    user = User.query.filter_by(email=email, password=password).first()
+    if not user:
+        return jsonify({"msg" : "no existe ese usuario"})
+    
+    token = create_access_token(identity=user.email)
+    return jsonify({"token" : token })
+
+# @api.route('/private', methods=['POST'])
+# @jwt_required()
+# def private():
+#     data = request.json

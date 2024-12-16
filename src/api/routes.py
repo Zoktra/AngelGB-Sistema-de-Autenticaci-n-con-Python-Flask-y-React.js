@@ -57,8 +57,9 @@ def handle_login():
         return jsonify({"msg" : "El usuario y el password son requeridos"}), 400
     
     user = User.query.filter_by(user_name=user_name, password=password).first()
-    if not user:
-        return jsonify({"msg" : "no existe ese usuario"})
+
+    if not user or user.password != password:
+        return jsonify({"msg": "Usuario o contraseña incorrectos"}), 400
     
     token = create_access_token(identity=user.user_name)
     return jsonify({"token" : token })

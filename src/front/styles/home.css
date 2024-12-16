@@ -1,7 +1,156 @@
-/*
-    home.css: This website contains selectors only used in home.css
+/* General styles */
+body {
+    font-family: "MS Sans Serif", Arial, sans-serif;
+    font-size: 14px;
+    color: black;
+    background-color: #008080;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column; /* Alineación vertical */
+  }
+  
+  .window {
+    width: 400px;
+    background-color: #c0c0c0;
+    border: 2px solid black;
+    box-shadow: 4px 4px #808080;
+  }
+  
+  .window-header {
+    background-color: #000080; 
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 2px solid black;
+  }
+  
+  .window-header .title {
+    font-weight: bold;
+  }
+  
+  .window-header .buttons {
+    display: flex;
+    gap: 2px;
+  }
+  
+  .window-header .button {
+    width: 16px;
+    height: 16px;
+    background-color: gray;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .window-body {
+    padding: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 5px;
+    border: 2px solid #808080;
+    background-color: white;
+    color: black;
+    margin-bottom: 15px;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .btn {
+    padding: 5px 20px;
+    background-color: #c0c0c0;
+    border: 2px solid #808080;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    border: 2px solid black;
+  }
 
-    All pages share the styles on index.css but you should create 
-    one more css for each page that will contain the selected used 
-    on that page only (the ones not reused in other pages).
-*/
+  .link {
+    color: #1e90ff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #a7a5a5; /* Color similar a la barra de tareas */
+    color: white;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 14px;
+    font-family: "MS Sans Serif", Arial, sans-serif;
+    border-top: 2px solid #808080; /* Borde superior gris */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Sombra sutil */
+    z-index: 10;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 12px; /* Tamaño de texto más pequeño */
+}
+
+.footer .link {
+    color: #1e90ff; /* Color azul para los enlaces */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer .link:hover {
+    text-decoration: underline; /* Subraya el enlace cuando se pasa el ratón */
+}
+
+.footer .button {
+    background-color: #dcdcdc; /* Color gris claro para los botones */
+    border: 1px solid #808080; /* Borde gris */
+    padding: 2px 8px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.footer .button:hover {
+    background-color: #c0c0c0; /* Cambia el color al pasar el ratón */
+}
+  .navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0; /* Asegura que el footer cubra todo el ancho */
+    width: 100%;
+    background-color: #333; /* Fondo oscuro para el footer */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+}
+
+navbar {
+    margin-top: auto; /* Esto asegura que el footer siempre se quede al final */
+}

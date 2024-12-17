@@ -1,4 +1,4 @@
-import React, { use, useContext, useEffect } from "react";
+import React from "react";
 import "../../styles/home.css";
 import Register from "../component/Register.jsx";
 
